@@ -10,150 +10,104 @@
       style="
         width: 100%;
         height: 98vh;
-        background: lightgreen;
         display: flex;
         align-items: center;
         justify-content: center;
+        background: lightgreen;
       "
     >
-      <div style="width: 100%; padding: 15px">
+      <div
+        style="
+          width: 40%;
+          height: 400px;
+          box-shadow: 0px 0px 15px 0px #fff;
+          border-radius: 10px;
+          margin-right: 10px;
+          background: #fff;
+          margin-left: 10px;
+        "
+      >
         <div
           style="
             width: 100%;
-            height: 300px;
+            height: 200px;
             display: flex;
+            align-items: center;
             justify-content: center;
           "
         >
-          <div
-            style="
-              width: 25%;
-              padding: 10px;
-              background: #fff;
-              border: 5px solid lightgreen;
-              border-radius: 15px;
-              color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <span id="cpu" style="font-size: 40px; font-weight: bold"></span>
-          </div>
-          <div
-            style="
-              width: 25%;
-              padding: 10px;
-              background: #fff;
-              border: 5px solid lightgreen;
-              border-radius: 15px;
-              color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <span id="cores" style="font-size: 40px; font-weight: bold"> </span>
-          </div>
-          <div
-            style="
-              width: 25%;
-              padding: 10px;
-              background: #fff;
-              border: 5px solid lightgreen;
-              border-radius: 15px;
-              color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <span id="ram" style="font-size: 40px; font-weight: bold"></span>
-          </div>
-          <div
-            style="
-              width: 25%;
-              padding: 10px;
-              background: #fff;
-              border: 5px solid lightgreen;
-              border-radius: 15px;
-              color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <span id="disk" style="font-size: 40px; font-weight: bold"></span>
+          <div>
+            <img
+              style="width: 200px; margin-top: 80px"
+              src="./icons/computer-image.png"
+              alt="OS"
+            />
           </div>
         </div>
+
         <div
           style="
             width: 100%;
-            height: 300px;
-            margin-top: 80px;
+            height: 200px;
             display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+          "
+        >
+          <div style="font-size: 35px; font-weight: bold" id="os">OS:</div>
+        </div>
+      </div>
+
+      <div
+        style="
+          width: 60%;
+          height: 400px;
+          box-shadow: 0px 0px 15px 0px #fff;
+          margin-right: 10px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #fff;
+        "
+      >
+        <div
+          style="
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
             justify-content: center;
           "
         >
-          <div
-            style="
-              width: 25%;
-              padding: 10px;
-              background: #fff;
-              border: 5px solid lightgreen;
-              border-radius: 15px;
-              color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <span id="os" style="font-size: 40px; font-weight: bold"></span>
-          </div>
-          <div
-            style="
-              width: 25%;
-              padding: 10px;
-              background: #fff;
-              border: 5px solid lightgreen;
-              border-radius: 15px;
-              color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <span id="karnel" style="font-size: 40px; font-weight: bold"></span>
-          </div>
-          <div
-            style="
-              width: 25%;
-              padding: 10px;
-              background: #fff;
-              border: 5px solid lightgreen;
-              border-radius: 15px;
-              color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <span id="audio" style="font-size: 40px; font-weight: bold"></span>
-          </div>
-          <div
-            style="
-              width: 25%;
-              padding: 10px;
-              background: #fff;
-              border: 5px solid lightgreen;
-              border-radius: 15px;
-              color: black;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-            "
-          >
-            <span id="v8" style="font-size: 40px; font-weight: bold"></span>
+          <div style="width: 100%; margin-left: 40px">
+            <div style="display: flex; align-items: left">
+              <img
+                src="./icons/cpu.png"
+                alt="cpu"
+                style="width: 50px; margin-right: 10px"
+              />
+              <span id="cpu" style="font-size: 35px; font-weight: bold"></span>
+            </div>
+
+            <div style="display: flex; align-items: left; margin-top: 40px">
+              <img
+                src="./icons/ram.png"
+                alt="cpu"
+                style="width: 50px; margin-right: 10px"
+              />
+              <span style="font-size: 35px; font-weight: bold" id="ram"></span>
+            </div>
+
+            <div style="display: flex; align-items: left; margin-top: 40px">
+              <img
+                src="./icons/hdd.png"
+                alt="cpu"
+                style="width: 50px; margin-right: 10px"
+              />
+              <span style="font-size: 35px; font-weight: bold" id="disk"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -164,38 +118,40 @@
       let ram = JSON.parse(localStorage.getItem("ram"));
       let disk = JSON.parse(localStorage.getItem("disk"));
       let os = JSON.parse(localStorage.getItem("os"));
-      let versions = JSON.parse(localStorage.getItem("versions"));
-      let audio = JSON.parse(localStorage.getItem("audio"));
-      let graphics = JSON.parse(localStorage.getItem("graphics"));
+      // let versions = JSON.parse(localStorage.getItem("versions"));
+      // let audio = JSON.parse(localStorage.getItem("audio"));
+      // let graphics = JSON.parse(localStorage.getItem("graphics"));
 
       //elements
       document.getElementById(
         "cpu"
-      ).innerHTML = `CPU: ${cpu.manufacturer} ${cpu.brand} ${cpu.speed}GHz\n`;
-
-      document.getElementById(
-        "cores"
-      ).innerHTML = `Cores: ${cpu.cores} (${cpu.physicalCores} Physical)\n`;
+      ).innerHTML = `<span style="color: blue">CPU: </span> ${cpu.manufacturer} ${cpu.brand} ${cpu.speed}GHz\n`;
 
       const totalRam = Math.round(ram.total / 1024 / 1024 / 1024);
-      document.getElementById("ram").innerHTML = `RAM: ${totalRam}GB\n`;
+      document.getElementById(
+        "ram"
+      ).innerHTML = `<span style="color: blue">RAM: </span> ${totalRam}GB\n`;
 
       const size = Math.round(disk.size / 1024 / 1024 / 1024);
       document.getElementById(
         "disk"
-      ).innerHTML = `Disk: ${disk.name} ${size}GB ${disk.type}\n`;
+      ).innerHTML = `<span style="color: blue">Disk: </span> ${disk.name} ${size}GB ${disk.type}\n`;
 
       document.getElementById(
         "os"
-      ).innerHTML = `OS: ${os.distro} ${os.codename} (${os.platform})\n`;
+      ).innerHTML = `<span style="color: blue">OS: </span>${os.distro} ${os.codename} (${os.platform})\n`;
 
-      document.getElementById(
-        "karnel"
-      ).innerHTML = `Kernel: ${os.kernel} ${os.arch}\n`;
+      // document.getElementById(
+      //   "cores"
+      // ).innerHTML = `Cores: ${cpu.cores} (${cpu.physicalCores} Physical)\n`;
 
-      document.getElementById("audio").innerHTML = `Audio: ${audio[0].name}`;
+      // document.getElementById(
+      //   "karnel"
+      // ).innerHTML = `Kernel: ${os.kernel} ${os.arch}\n`;
 
-      document.getElementById("v8").innerHTML = `V8: ${versions.v8}`;
+      // document.getElementById("audio").innerHTML = `Audio: ${audio[0].name}`;
+
+      // document.getElementById("v8").innerHTML = `V8: ${versions.v8}`;
     </script>
   </body>
 </html>
