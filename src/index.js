@@ -11,6 +11,7 @@ const createWindow = () => {
     height: 1080,
     webPreferences: {
       preload: path.join(__dirname, "information.js"),
+      devTools: false,
     },
   });
 

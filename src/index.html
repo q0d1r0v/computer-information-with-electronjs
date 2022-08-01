@@ -94,7 +94,7 @@
             <div style="display: flex; align-items: left; margin-top: 40px">
               <img
                 src="./icons/ram.png"
-                alt="cpu"
+                alt="ram"
                 style="width: 50px; margin-right: 10px"
               />
               <span style="font-size: 35px; font-weight: bold" id="ram"></span>
@@ -103,10 +103,22 @@
             <div style="display: flex; align-items: left; margin-top: 40px">
               <img
                 src="./icons/hdd.png"
-                alt="cpu"
+                alt="hdd"
                 style="width: 50px; margin-right: 10px"
               />
               <span style="font-size: 35px; font-weight: bold" id="disk"></span>
+            </div>
+
+            <div style="display: flex; align-items: left; margin-top: 40px">
+              <img
+                src="./icons/ssd.png"
+                alt="diskSSD"
+                style="width: 50px; margin-right: 10px"
+              />
+              <span
+                style="font-size: 35px; font-weight: bold"
+                id="diskSSD"
+              ></span>
             </div>
           </div>
         </div>
@@ -117,6 +129,7 @@
       let cpu = JSON.parse(localStorage.getItem("cpu"));
       let ram = JSON.parse(localStorage.getItem("ram"));
       let disk = JSON.parse(localStorage.getItem("disk"));
+      let diskSSD = JSON.parse(localStorage.getItem("diskSSD"));
       let os = JSON.parse(localStorage.getItem("os"));
       // let versions = JSON.parse(localStorage.getItem("versions"));
       // let audio = JSON.parse(localStorage.getItem("audio"));
@@ -136,6 +149,13 @@
       document.getElementById(
         "disk"
       ).innerHTML = `<span style="color: blue">Disk: </span> ${disk.name} ${size}GB ${disk.type}\n`;
+
+      const sizeSSD = Math.round(diskSSD.size / 1024 / 1024 / 1024);
+      document.getElementById(
+        "diskSSD"
+      ).innerHTML = `<span style="color: blue">Disk SSD: </span> ${
+        disk.name ? disk.name : ""
+      } ${sizeSSD}GB ${disk.type}\n`;
 
       document.getElementById(
         "os"
