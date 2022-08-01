@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>information-of-computer</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div
+      style="
+        width: 100%;
+        height: 98vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div
+        style="
+          width: 30%;
+          height: 400px;
+          border: 1px solid red;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        image
+      </div>
+
+      <div
+        style="
+          width: 70%;
+          height: 400px;
+          border: 1px solid red;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        <div
+          style="
+            width: 100%;
+            height: 200px;
+            border: 1px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div style="width: 100%">
+            <div>//</div>
+            <div>//</div>
+            <div>//</div>
+            <div>//</div>
+            <div>//</div>
+            <div>//</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      //data
+      let cpu = JSON.parse(localStorage.getItem("cpu"));
+      let ram = JSON.parse(localStorage.getItem("ram"));
+      let disk = JSON.parse(localStorage.getItem("disk"));
+      let os = JSON.parse(localStorage.getItem("os"));
+      let versions = JSON.parse(localStorage.getItem("versions"));
+      let audio = JSON.parse(localStorage.getItem("audio"));
+      let graphics = JSON.parse(localStorage.getItem("graphics"));
+
+      //elements
+      document.getElementById(
+        "cpu"
+      ).innerHTML = `CPU: ${cpu.manufacturer} ${cpu.brand} ${cpu.speed}GHz\n`;
+
+      document.getElementById(
+        "cores"
+      ).innerHTML = `Cores: ${cpu.cores} (${cpu.physicalCores} Physical)\n`;
+
+      const totalRam = Math.round(ram.total / 1024 / 1024 / 1024);
+      document.getElementById("ram").innerHTML = `RAM: ${totalRam}GB\n`;
+
+      const size = Math.round(disk.size / 1024 / 1024 / 1024);
+      document.getElementById(
+        "disk"
+      ).innerHTML = `Disk: ${disk.name} ${size}GB ${disk.type}\n`;
+
+      document.getElementById(
+        "os"
+      ).innerHTML = `OS: ${os.distro} ${os.codename} (${os.platform})\n`;
+
+      document.getElementById(
+        "karnel"
+      ).innerHTML = `Kernel: ${os.kernel} ${os.arch}\n`;
+
+      document.getElementById("audio").innerHTML = `Audio: ${audio[0].name}`;
+
+      document.getElementById("v8").innerHTML = `V8: ${versions.v8}`;
+    </script>
+  </body>
+</html>
